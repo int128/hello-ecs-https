@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  echoserver:
+    image: gcr.io/google_containers/echoserver:1.8
+    ports:
+      - "10001:8080"
+    mem_limit: 128M
+  gitbucket:
+    image: f99aq8ove/gitbucket:latest
+    ports:
+      - "10002:8080"
+    volumes:
+      - gitbucket-data:/gitbucket
+    mem_limit: 256M
+
+volumes:
+  gitbucket-data:
+    driver: local
