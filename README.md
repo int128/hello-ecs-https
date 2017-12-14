@@ -35,3 +35,11 @@ Open URLs.
 - https://git.ecs.example.com should show the login page
 
 Check the Cloud Watch Logs.
+
+
+# Caveats
+
+Git data will saved to the Docker volume in the ECS instance.
+
+You will lose data if the ECS instance has been terminated.
+Auto scaling group recovers an instance but not volumes.
