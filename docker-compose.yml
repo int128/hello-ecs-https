@@ -6,6 +6,12 @@ services:
     ports:
       - "10001:8080"
     mem_limit: 128M
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-northeast-1
+        awslogs-group: hello
+        awslogs-stream-prefix: echoserver
   gitbucket:
     image: f99aq8ove/gitbucket:latest
     ports:
@@ -13,6 +19,12 @@ services:
     volumes:
       - gitbucket-data:/gitbucket
     mem_limit: 256M
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ap-northeast-1
+        awslogs-group: hello
+        awslogs-stream-prefix: gitbucket
 
 volumes:
   gitbucket-data:

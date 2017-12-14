@@ -33,3 +33,5 @@ Open URLs.
 
 - https://echo.ecs.example.com should show the request/response
 - https://git.ecs.example.com should show the login page
+
+Check the Cloud Watch Logs.
